@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forum — Realm community archive</title>
+    <meta
+      name="description"
+      content="A read-only, searchable mirror of the Realm Discord: modding help and beta bug reports."
+    />
+    <meta property="og:title" content="Forum — Realm community archive" />
+    <meta
+      property="og:description"
+      content="A read-only, searchable mirror of the Realm Discord: modding help and beta bug reports."
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">Realm</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/forum/">Forum</a>
+          <a class="nav__download" href="/#download">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="forum-hero">
+        <div class="wrap">
+          <p class="rule-heading">
+            <span class="rule-heading__line"></span> Community archive
+          </p>
+          <p class="forum-kicker">Realm</p>
+          <h1>Forum</h1>
+          <p class="text-muted">
+            A read-only, searchable mirror of the Realm Discord: modding help
+            and beta bug reports.
+          </p>
+          <p class="text-muted" style="margin-top: 0.75rem">
+            Reading happens here. Posting happens in
+            <a class="link-accent" href="https://discord.gg/PfWcxswY7"
+              >Discord</a
+            >.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://discord.gg/PfWcxswY7"
+              >Join Discord</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="https://www.answeroverflow.com/c/1535090652478578830"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open on Answer Overflow
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap forum-body">
+        <div class="panel archive-frame">
+          <div class="archive-frame__bar">
+            <span style="color: var(--accent)">Live mirror</span>
+            <a
+              href="https://www.answeroverflow.com/c/1535090652478578830"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open full archive
+            </a>
+          </div>
+          <iframe
+            src="https://www.answeroverflow.com/c/1535090652478578830"
+            title="Realm Discord archive on Answer Overflow"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <p class="forum-note">
+          The iframe shows the Answer Overflow snapshot. Realm branding below is
+          the on-site forum chrome (custom CSS). Full theming of AO’s inner UI
+          needs a self-hosted AO deploy later.
+        </p>
+
+        <div
+          class="forum-toolbar"
+          role="tablist"
+          aria-label="Forum channels"
+          style="margin-top: 2.5rem"
+        >
+          <button
+            type="button"
+            class="forum-channel-tab is-active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="forum-channel-tab"
+            data-filter="#modding-help"
+            role="tab"
+            aria-selected="false"
+          >
+            #modding-help
+          </button>
+          <button
+            type="button"
+            class="forum-channel-tab"
+            data-filter="#beta-bugs"
+            role="tab"
+            aria-selected="false"
+          >
+            #beta-bugs
+          </button>
+        </div>
+
+        <ul class="forum-thread-list" id="thread-list">
+          <li>
+            <article class="forum-thread" data-channel="#modding-help">
+              <div class="forum-thread__meta">
+                <span class="forum-channel-tag">#modding-help</span>
+                <span class="forum-status is-answered">Answered</span>
+              </div>
+              <h2 class="forum-thread-title">
+                How do I make a trigger fire once per wave?
+              </h2>
+              <p class="excerpt">
+                I need a wave-start hook that doesn’t re-fire when units path
+                over the same region.
+              </p>
+              <p class="stats">12 replies · mapwright</p>
+            </article>
+          </li>
+          <li>
+            <article class="forum-thread" data-channel="#beta-bugs">
+              <div class="forum-thread__meta">
+                <span class="forum-channel-tag">#beta-bugs</span>
+                <span class="forum-status is-fixed">Fixed</span>
+              </div>
+              <h2 class="forum-thread-title">
+                Editor crashes on hot reload with 4k terrain
+              </h2>
+              <p class="excerpt">
+                Repro: sculpt, save, hot reload twice. Stack trace points at the
+                terrain plugin.
+              </p>
+              <p class="stats">3 replies · forge_dev</p>
+            </article>
+          </li>
+          <li>
+            <article class="forum-thread" data-channel="#modding-help">
+              <div class="forum-thread__meta">
+                <span class="forum-channel-tag">#modding-help</span>
+                <span class="forum-status is-answered">Answered</span>
+              </div>
+              <h2 class="forum-thread-title">
+                Exporting a signed .7z map package from the editor
+              </h2>
+              <p class="excerpt">
+                What’s the one-click path to ship a lobby-downloadable Arcade
+                map?
+              </p>
+              <p class="stats">5 replies · rune_runner</p>
+            </article>
+          </li>
+          <li>
+            <article class="forum-thread" data-channel="#beta-bugs">
+              <div class="forum-thread__meta">
+                <span class="forum-channel-tag">#beta-bugs</span>
+                <span class="forum-status is-open">Open</span>
+              </div>
+              <h2 class="forum-thread-title">
+                Lobby join fails behind corporate NAT
+              </h2>
+              <p class="excerpt">
+                UDP hole punching works at home but times out on office Wi‑Fi.
+              </p>
+              <p class="stats">8 replies · skirmisher</p>
+            </article>
+          </li>
+          <li>
+            <article class="forum-thread" data-channel="#modding-help">
+              <div class="forum-thread__meta">
+                <span class="forum-channel-tag">#modding-help</span>
+                <span class="forum-status is-open">Open</span>
+              </div>
+              <h2 class="forum-thread-title">
+                Best pattern for AI creep pathing in TD maps?
+              </h2>
+              <p class="excerpt">
+                Looking for examples of waypoint graphs vs navmesh for ~1200
+                units.
+              </p>
+              <p class="stats">7 replies · tower_tinkerer</p>
+            </article>
+          </li>
+        </ul>
+
+        <p class="forum-note">
+          Branded thread list uses Realm custom CSS. Replace with live AO
+          content under this path when self-hosting is ready.
+        </p>
+
+        <details class="forum-setup">
+          <summary>Operator setup</summary>
+          <ol>
+            <li>
+              <span class="forum-setup__n">1</span>
+              <span>
+                <strong>Discord + Answer Overflow bot</strong>
+                <span>Keep indexing on help and bug channels only.</span>
+              </span>
+            </li>
+            <li>
+              <span class="forum-setup__n">2</span>
+              <span>
+                <strong>Confirm archive</strong>
+                <span>
+                  Live community:
+                  <a
+                    class="link-accent"
+                    href="https://www.answeroverflow.com/c/1535090652478578830"
+                    >answeroverflow.com/c/…</a
+                  >
+                </span>
+              </span>
+            </li>
+            <li>
+              <span class="forum-setup__n">3</span>
+              <span>
+                <strong>Self-host for full AO CSS (later)</strong>
+                <span
+                  >Theme AO with Realm tokens, then reverse-proxy /forum to that
+                  app.</span
+                >
+              </span>
+            </li>
+          </ol>
+        </details>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p class="brand">Realm</p>
+        <div class="site-footer__links">
+          <a href="https://github.com/speige/Realm">GitHub</a>
+          <a href="https://discord.gg/PfWcxswY7">Discord</a>
+          <a href="/forum/">Forum</a>
+        </div>
+        <p>MIT licensed. Built with its community.</p>
+      </div>
+    </footer>
+
+    <script src="/js/forum.js" defer></script>
+  </body>
+</html>

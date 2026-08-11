@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Realm — Open-source RTS engine built for custom maps</title>
+    <meta
+      name="description"
+      content="Realm is an open-source real-time strategy engine built around an Arcade of player-made mini-games and maps. Download the pre-alpha, join Discord, and build your own."
+    />
+    <meta
+      property="og:title"
+      content="Realm — Open-source RTS engine built for custom maps"
+    />
+    <meta
+      property="og:description"
+      content="Realm is an open-source real-time strategy engine built around an Arcade of player-made mini-games and maps."
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="/">Realm</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/forum/">Forum</a>
+          <a class="nav__download" href="/#download">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img
+          class="hero__bg"
+          src="/assets/hero-battle.jpg"
+          alt="Realm gameplay: armies clashing on an isometric battlefield"
+          width="1920"
+          height="1088"
+        />
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="wrap hero__content">
+          <p class="rule-heading">
+            <span class="rule-heading__line"></span> 0.0.1 Pre-Alpha · MIT
+            licensed
+          </p>
+          <h1>Realm</h1>
+          <p class="hero__tagline">
+            Command an army. <span class="text-ember">Then build the map.</span>
+          </p>
+          <p class="hero__lead">
+            Realm is an open-source real-time strategy engine built around an
+            Arcade of player-made mini-games and maps. Download the pre-alpha,
+            join Discord, and build your own.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#download">Download pre-alpha</a>
+            <a class="btn btn--ghost" href="https://github.com/speige/Realm"
+              >Source on GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="concept" class="section">
+        <div class="wrap">
+          <p class="rule-heading">
+            <span class="rule-heading__line"></span> The idea
+          </p>
+          <h2>An open-source RTS built for the Arcade</h2>
+          <p class="section__lead">
+            Inspired by classic Warcraft and StarCraft custom maps: play quick
+            arcade-style matches, then publish your own mini-games for others to
+            host. Maps travel with the lobby — no storefront gatekeeper. The
+            engine and editor are MIT-licensed so creators can fork, mod, and
+            ship.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--tight-bottom">
+        <div class="wrap">
+          <p class="rule-heading">
+            <span class="rule-heading__line"></span> Beta look
+          </p>
+          <h2>In-game and in the editor</h2>
+          <div class="shot-grid">
+            <img
+              class="panel"
+              src="/assets/arcade-td.jpg"
+              alt="Tower defense Arcade map with creep lanes and rune towers"
+              width="1024"
+              height="768"
+              loading="lazy"
+            />
+            <img
+              class="panel"
+              src="/assets/arcade-arena.jpg"
+              alt="Chaos Arena free-for-all battle on an isometric map"
+              width="1024"
+              height="768"
+              loading="lazy"
+            />
+            <img
+              class="panel"
+              src="/assets/editor.jpg"
+              alt="Realm map editor with terrain tools and trigger graph"
+              width="1024"
+              height="768"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="section">
+        <div class="wrap">
+          <div class="panel download-panel">
+            <p class="rule-heading">
+              <span class="rule-heading__line"></span> Download
+            </p>
+            <h2>Play the pre-alpha</h2>
+            <p class="section__lead">
+              Free and unfinished. Expect rough edges — bug reports in Discord
+              help a lot.
+            </p>
+            <div class="download-grid">
+              <a
+                class="download-card"
+                href="https://github.com/speige/Realm/releases/download/0.0.1_Pre-Alpha_rev2/Realm-Godot-Windows-x64_0.0.1_Pre-Alpha.7z"
+              >
+                <svg
+                  class="download-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+                <span>
+                  <strong>Windows x64</strong>
+                  <span>0.0.1 Pre-Alpha · .7z archive</span>
+                </span>
+              </a>
+              <a class="download-card" href="https://github.com/speige/Realm">
+                <svg
+                  class="download-card__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+                <span>
+                  <strong>Build from source</strong>
+                  <span>Clone recursively, then build</span>
+                </span>
+              </a>
+            </div>
+            <p class="download-note">
+              macOS and Linux builds aren’t published yet.
+              <a
+                class="link-accent"
+                href="https://github.com/speige/Realm/releases"
+                >All releases on GitHub</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="community">
+            <div>
+              <h2>Build with the community</h2>
+              <p>
+                Creators discuss maps and mods in Discord. Public help threads
+                are mirrored read-only on the forum via Answer Overflow.
+              </p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="https://discord.gg/PfWcxswY7"
+                >Join Discord</a
+              >
+              <a class="btn btn--outline" href="/forum/">Browse the forum</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p class="brand">Realm</p>
+        <div class="site-footer__links">
+          <a href="https://github.com/speige/Realm">GitHub</a>
+          <a href="https://discord.gg/PfWcxswY7">Discord</a>
+          <a href="/forum/">Forum</a>
+        </div>
+        <p>MIT licensed. Built with its community.</p>
+      </div>
+    </footer>
+  </body>
+</html>

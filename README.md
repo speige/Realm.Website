@@ -1,26 +1,28 @@
 # Realm Website
 
-Marketing site for Realm — an open-source RTS engine focused on quick Arcade matches and community maps.
+Static marketing site for Realm — plain HTML, CSS, and a little vanilla JS (no React, no Bootstrap).
 
 ## Pages
 
-- `/` — concept, screenshots, downloads, Discord/forum CTAs
-- `/forum` — Answer Overflow setup checklist + branded mock until the self-hosted archive is proxied live
+- `/` — `index.html` — concept, screenshots, downloads, Discord CTA
+- `/forum/` — read-only Discord archive via Answer Overflow embed + Realm-branded forum chrome
 
-## Config
+## Config / links
 
-Edit `src/config/site.ts` for Discord invite, download URLs, version, and `forumLive`.
+Edit URLs directly in the HTML files (Discord, GitHub, downloads, Answer Overflow).
 
-## Development
+## Local preview
+
+Any static server works, for example:
 
 ```sh
-npm install
-npm run dev
+npx --yes serve -l 3000
 ```
 
-## Built with
+Then open http://localhost:3000
 
-- React
-- TanStack Start
-- Vite
-- Tailwind CSS
+## Stack
+
+- HTML
+- CSS (`css/styles.css`)
+- Vanilla JS (`js/forum.js` — channel filter on `/forum/` only)
