@@ -24,43 +24,47 @@
       content="Realm is an open-source arcade RTS built for custom maps: massive multiplayer battles, a full map editor, and AI-assisted modding."
     />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="/assets/yt-banner-640.avif"
+      imagesrcset="/assets/yt-banner-480.avif 480w, /assets/yt-banner-640.avif 640w, /assets/yt-banner-800.avif 800w, /assets/yt-banner-1024.avif 1024w, /assets/yt-banner-1440.avif 1440w, /assets/yt-banner-1920.avif 1920w, /assets/yt-banner-2560.avif 2560w"
+      imagesizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Barlow:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script>
-      (function (s, e, n, d, er) {
-        s['Sender'] = er;
-        s[er] = s[er] || function () {
-          (s[er].q = s[er].q || []).push(arguments)
-        }, s[er].l = 1 * new Date();
-        s[er].on = function(event, callback) {
-          s[er].listeners = s[er].listeners || {};
-          (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
-        };
-        var a = e.createElement(n),
-            m = e.getElementsByTagName(n)[0];
-        a.async = 1;
-        a.src = d;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-      sender('b50790ab2b4780')
-    </script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Barlow:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+    <link rel="stylesheet" href="/css/styles.min.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="brand" href="/">
-          <img
-            class="brand__logo"
-            src="/assets/logo.png"
-            alt=""
-            width="36"
-            height="36"
-          />
+          <picture>
+            <source type="image/avif" srcset="/assets/logo.avif" />
+            <source type="image/webp" srcset="/assets/logo.webp" />
+            <img
+              class="brand__logo"
+              src="/assets/logo.webp"
+              alt=""
+              width="36"
+              height="36"
+              decoding="async"
+            />
+          </picture>
           <span class="brand__name">Realm</span>
         </a>
         <nav class="nav" aria-label="Primary">
@@ -132,13 +136,27 @@
     <main>
       <section class="hero">
         <div class="hero__visual">
-          <img
-            class="hero__bg"
-            src="/assets/yt-banner.png"
-            alt="Realm logo and wordmark on cracked stone with cyan energy"
-            width="2560"
-            height="1440"
-          />
+          <picture class="hero__picture">
+            <source
+              type="image/avif"
+              srcset="/assets/yt-banner-480.avif 480w, /assets/yt-banner-640.avif 640w, /assets/yt-banner-800.avif 800w, /assets/yt-banner-1024.avif 1024w, /assets/yt-banner-1440.avif 1440w, /assets/yt-banner-1920.avif 1920w, /assets/yt-banner-2560.avif 2560w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+            />
+            <source
+              type="image/webp"
+              srcset="/assets/yt-banner-480.webp 480w, /assets/yt-banner-640.webp 640w, /assets/yt-banner-800.webp 800w, /assets/yt-banner-1024.webp 1024w, /assets/yt-banner-1440.webp 1440w, /assets/yt-banner-1920.webp 1920w, /assets/yt-banner-2560.webp 2560w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+            />
+            <img
+              class="hero__bg"
+              src="/assets/yt-banner-1024.webp"
+              alt="Realm logo and wordmark on cracked stone with cyan energy"
+              width="2560"
+              height="1440"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
           <div class="hero__veil" aria-hidden="true"></div>
         </div>
 
@@ -235,142 +253,202 @@
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_1.webp"
               aria-label="Expand: Realm screenshot 1"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_1.png"
-                alt="Realm screenshot 1"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_1_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_1_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_1_thumb.webp"
+                  alt="Realm screenshot 1"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_2.webp"
               aria-label="Expand: Realm screenshot 2"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_2.png"
-                alt="Realm screenshot 2"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_2_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_2_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_2_thumb.webp"
+                  alt="Realm screenshot 2"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_3.webp"
               aria-label="Expand: Realm screenshot 3"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_3.png"
-                alt="Realm screenshot 3"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_3_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_3_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_3_thumb.webp"
+                  alt="Realm screenshot 3"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_4.webp"
               aria-label="Expand: Realm screenshot 4"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_4.png"
-                alt="Realm screenshot 4"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_4_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_4_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_4_thumb.webp"
+                  alt="Realm screenshot 4"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_5.webp"
               aria-label="Expand: Realm screenshot 5"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_5.png"
-                alt="Realm screenshot 5"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_5_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_5_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_5_thumb.webp"
+                  alt="Realm screenshot 5"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_6.webp"
               aria-label="Expand: Realm screenshot 6"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_6.png"
-                alt="Realm screenshot 6"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_6_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_6_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_6_thumb.webp"
+                  alt="Realm screenshot 6"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_7.webp"
               aria-label="Expand: Realm screenshot 7"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_7.png"
-                alt="Realm screenshot 7"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_7_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_7_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_7_thumb.webp"
+                  alt="Realm screenshot 7"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_8.webp"
               aria-label="Expand: Realm screenshot 8"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_8.png"
-                alt="Realm screenshot 8"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_8_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_8_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_8_thumb.webp"
+                  alt="Realm screenshot 8"
+                  width="500"
+                  height="289"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_9.webp"
               aria-label="Expand: Realm screenshot 9"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_9.png"
-                alt="Realm screenshot 9"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_9_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_9_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_9_thumb.webp"
+                  alt="Realm screenshot 9"
+                  width="500"
+                  height="269"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
             <button
               type="button"
               class="shot-expand"
+              data-full-src="/assets/screenshot_10.webp"
               aria-label="Expand: Realm screenshot 10"
             >
-              <img
-                class="panel"
-                src="/assets/screenshot_10.png"
-                alt="Realm screenshot 10"
-                width="1920"
-                height="1080"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/avif" srcset="/assets/screenshot_10_thumb.avif" />
+                <source type="image/webp" srcset="/assets/screenshot_10_thumb.webp" />
+                <img
+                  class="panel"
+                  src="/assets/screenshot_10_thumb.webp"
+                  alt="Realm screenshot 10"
+                  width="500"
+                  height="269"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </button>
           </div>
         </div>
@@ -668,7 +746,7 @@
       </button>
     </dialog>
 
-    <script src="/js/lightbox.js?v=3" defer></script>
+    <script src="/js/lightbox.js?v=4" defer></script>
     <script src="/js/donate.js" defer></script>
     <script src="/js/subscribe.js" defer></script>
   </body>

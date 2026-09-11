@@ -18,7 +18,9 @@
   const gallery = Array.from(document.querySelectorAll(".shot-expand")).map(
     (button) => {
       const thumb = button.querySelector("img");
+      const fullSrc = button.getAttribute("data-full-src") || "";
       const src =
+        fullSrc ||
         (thumb instanceof HTMLImageElement &&
           (thumb.getAttribute("src") || thumb.currentSrc || thumb.src)) ||
         "";

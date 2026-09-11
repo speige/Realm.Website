@@ -18,9 +18,8 @@
     oklch(0.17 0.018 250) 100%
   );
   --shadow-ember: 0 0 0 1px oklch(0.78 0.14 195 / 0.35), 0 18px 50px -18px oklch(0.78 0.14 195 / 0.55);
-  --shadow-panel: 0 24px 60px -30px oklch(0.05 0.02 250 / 0.9);
-  --font-display: "Cinzel", serif;
-  --font-body: "Barlow", sans-serif;
+  --font-display: "Cinzel", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-body: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --max: 72rem;
 }
 
@@ -143,11 +142,18 @@ button {
   min-width: 0;
 }
 
+.brand picture {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .brand__logo {
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
   object-fit: contain;
+  aspect-ratio: 1 / 1;
 }
 
 .brand__name {
@@ -338,6 +344,15 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
+.hero__picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero__picture img,
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -416,6 +431,7 @@ button {
     min-height: 12rem;
   }
 
+  .hero__picture img,
   .hero__bg {
     object-position: center 35%;
   }
@@ -609,6 +625,11 @@ button {
   cursor: zoom-in;
   border-radius: var(--radius);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shot-expand picture {
+  display: block;
+  width: 100%;
 }
 
 .shot-expand:hover,

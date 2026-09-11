@@ -1,4 +1,30 @@
 (() => {
+  let senderInitialized = false;
+
+  function initSender() {
+    if (senderInitialized) return;
+    senderInitialized = true;
+    (function (s, e, n, d, er) {
+      s['Sender'] = er;
+      s[er] = s[er] || function () {
+        (s[er].q = s[er].q || []).push(arguments);
+      };
+      s[er].l = 1 * new Date();
+      s[er].on = function(event, callback) {
+        s[er].listeners = s[er].listeners || {};
+        (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+      };
+      var a = e.createElement(n),
+          m = e.getElementsByTagName(n)[0];
+      a.async = 1;
+      a.src = d;
+      m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+    if (typeof window.sender === "function") {
+      window.sender('b50790ab2b4780');
+    }
+  }
+
   function clearSenderCooldownCookies() {
     try {
       document.cookie.split(";").forEach((cookie) => {
@@ -69,6 +95,9 @@
       e.preventDefault();
     }
 
+    // Ensure Sender is initialized
+    initSender();
+
     // Update URL hash without causing a page jump
     if (window.location.hash !== "#subscribe") {
       history.pushState(null, "", "#subscribe");
@@ -88,6 +117,7 @@
 
   function checkHash() {
     if (window.location.hash === "#subscribe") {
+      initSender();
       // Give Sender script an initial moment to initialize
       setTimeout(openSubscribeModal, 150);
     }
@@ -100,10 +130,31 @@
 
     subscribeLinks.forEach((link) => {
       link.addEventListener("click", openSubscribeModal);
+      link.addEventListener("mouseenter", initSender, { once: true, passive: true });
+      link.addEventListener("focus", initSender, { once: true, passive: true });
+      link.addEventListener("touchstart", initSender, { once: true, passive: true });
     });
 
     window.addEventListener("hashchange", checkHash);
     checkHash();
+
+    // Initialize Sender on user interaction or scroll
+    if (window.location.hash !== "#subscribe") {
+      const onFirstInteraction = () => {
+        initSender();
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("pointerdown", onFirstInteraction);
+        window.removeEventListener("keydown", onFirstInteraction);
+      };
+      const onScroll = () => {
+        if (window.scrollY > 400) {
+          onFirstInteraction();
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("pointerdown", onFirstInteraction, { passive: true, once: true });
+      window.addEventListener("keydown", onFirstInteraction, { passive: true, once: true });
+    }
   }
 
   if (document.readyState === "loading") {
